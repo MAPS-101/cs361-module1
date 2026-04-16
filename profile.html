@@ -1,68 +1,355 @@
 <!DOCTYPE html>
-  <html lang="en">
-     <head>
-       <meta charset="UTF-8">
-       <meta name="viewpot" content="width=device-width, initial-scale=1.0">
-       <title>Mapesho-Pesonal profile</title>
-          </head> 
-       <body>
-        <header>
-          <h1>MAPESHO</h1>
-          <nav>
-       <a href="#about">About</a>
-       <a href="#Hobbies">Hobbies</a>
-       <a href="Contact">Contact</a>
-          </nav>
-        </header>
-        <main>
-           <article> 
-              <h2>About Me</h2> 
-              <p>Hello! My name is Mapesho, a 3rd year Computer Science student at the Copperbelt University.<br>
-              I'm passionate about web development, problem solving and a little bit of building things that make<br>
-              life a little bit easier. When i'm not coding I enjoy exploring new technologies and also working on <br>
-              some personal projects.</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapesho · personal profile</title>
+  <style>
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-              <p>I chose this program because its amazing how we can solve real world problems by just using Technology.<br>
-              So far, with this course, my favorite part is learning how to build an interactive web application and<br>
-              understanding how the software works behind the scenes, its very Fun!!</p>
-        <h3>Interests</h3>
-          <ul>
-            <li>Coding side projects</li>
-            <li>Playing Video Games</li>
-            <li>Watching Movies</li>
-            <li>Running</li>
-            <li>Listening to good music</li>
-          </ul>
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-          <h3>Top 3 Academic Courses</h3>
-          <ol>
-            <li>Web Development</li>
-            <li>JAVA Programming</li>
-            <li>Software Engineering</li>
-          </ol>
-    <figure>
-      <img src="profile.jpg" alt="Photo of Mapesho" width="200" height="200">
-       <figcaption>Mapesho- 3rd year CS Student</figcaption>
-    </figure>
-           </article>
-        </main>
-        <aside>
-          <h2>Contacts & Links</h2>
-          <h3>Find me online</h3>
-          <ul>
-            <li><a href="https://github.com/MAPS-101" target="_blank">GitHub</a></li>
-            <li><a href="mailto:mapeshocndumba0@gamil.com">CBU Email</a></li>
-          </ul>
+    /* header + navigation */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 1rem;
+    }
 
-          <h3>Student Info</h3>
-          <dl>
-             <dt>Department:</dt>
-             <dd>School of Information and Communication Technology</dd>
-             <dt>Year:</dt>
-             <dd>Year 3</dd>
-             <dt>Programme:</dt>
-             <dd>Bachelor of Science in Computer Science</dd>
-          </dl>
-        </aside>
-       </body>
-     </html>
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1e293b;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+
+    /* main layout: article + aside as two columns */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* card style for main & aside */
+    article, aside {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 2rem 2rem 2rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease;
+    }
+
+    aside {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      border-left: 6px solid #2563eb;
+      padding-left: 1rem;
+      color: #0f172a;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 1.5rem 0 1rem 0;
+      color: #1e293b;
+    }
+
+    h3:first-of-type {
+      margin-top: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #334155;
+    }
+
+    /* lists styling */
+    ul, ol {
+      padding-left: 1.6rem;
+      margin: 1rem 0 1.5rem 0;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    ul li::marker {
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    ol li::marker {
+      font-weight: 600;
+      color: #1e40af;
+    }
+
+    /* figure + image */
+    figure {
+      margin: 2rem 0 0.5rem 0;
+      text-align: center;
+      background: #f1f5f9;
+      padding: 1.5rem 1rem 1rem 1rem;
+      border-radius: 32px;
+    }
+
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.2);
+      border: 3px solid white;
+      transition: all 0.25s;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.2);
+    }
+
+    figcaption {
+      margin-top: 0.8rem;
+      font-weight: 500;
+      color: #1e293b;
+      font-size: 1rem;
+    }
+
+    /* aside specific styling */
+    aside ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    aside li {
+      margin-bottom: 0.8rem;
+    }
+
+    aside a {
+      display: inline-block;
+      background: white;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e40af;
+      border: 1px solid #cbd5e1;
+      transition: all 0.2s;
+    }
+
+    aside a:hover {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    dl {
+      margin-top: 0.8rem;
+      background: white;
+      padding: 1.2rem 1.5rem;
+      border-radius: 20px;
+    }
+
+    dt {
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 0.6rem;
+    }
+
+    dd {
+      margin-left: 0.5rem;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    dd:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* fix contact link alignment */
+    aside h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* small adjustments for mobile */
+    @media (max-width: 700px) {
+      body {
+        padding: 1.2rem;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      nav {
+        gap: 1.5rem;
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      article, aside {
+        padding: 1.5rem;
+      }
+    }
+
+    /* fix fragment link offset */
+    :target {
+      scroll-margin-top: 2rem;
+    }
+
+    /* subtle extras */
+    .highlight {
+      background: #e6f0ff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>MAPESHO</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#hobbies-section">Hobbies</a>
+    <a href="#contact-section">Contact</a>
+  </nav>
+</header>
+
+
+<div class="profile-grid">
+  <main>
+    <article>
+      <!-- anchor for 'About' link -->
+      <span id="about" style="display: block; position: relative; top: -60px;"></span>
+      <h2>About Me</h2>
+      <p>Hello! My name is Mapesho, a 3rd year Computer Science student at the Copperbelt University.<br>
+      I'm passionate about web development, problem solving and a little bit of building things that make<br>
+      life a little bit easier. When I'm not coding I enjoy exploring new technologies and also working on <br>
+      some personal projects.</p>
+
+      <p>I chose this program because it's amazing how we can solve real world problems by just using Technology.<br>
+      So far, with this course, my favorite part is learning how to build an interactive web application and<br>
+      understanding how the software works behind the scenes — it's very fun!</p>
+
+      <!-- anchor for hobbies link (navigates here + interests list) -->
+      <span id="hobbies-section" style="display: block; position: relative; top: -60px;"></span>
+      <h3>🧩 Interests</h3>
+      <ul>
+        <li>Coding side projects</li>
+        <li>Playing Video Games</li>
+        <li>Watching Movies</li>
+        <li>Running</li>
+        <li>Listening to good music</li>
+      </ul>
+
+      <h3>📚 Top 3 Academic Courses</h3>
+      <ol>
+        <li>Web Development</li>
+        <li>JAVA Programming</li>
+        <li>Software Engineering</li>
+      </ol>
+
+      <figure>
+        <!-- original image reference: profile.jpg (keeping alt & size) -->
+        <img src="profile.jpg" alt="Photo of Mapesho" width="200" height="200">
+        <figcaption>✨ Mapesho — 3rd year CS Student</figcaption>
+      </figure>
+    </article>
+  </main>
+
+  <aside>
+    <!-- anchor for contact link -->
+    <span id="contact-section" style="display: block; position: relative; top: -60px;"></span>
+    <h2>📬 Contacts & Links</h2>
+    
+    <h3>🌐 Find me online</h3>
+    <ul>
+      <li><a href="https://github.com/MAPS-101" target="_blank">🐙 GitHub · MAPS-101</a></li>
+      <li><a href="mailto:mapeshocndumba0@gamil.com">✉️ CBU Email</a></li>
+    </ul>
+
+    <h3>🎓 Student Info</h3>
+    <dl>
+      <dt>Department:</dt>
+      <dd>School of Information and Communication Technology</dd>
+      <dt>Year:</dt>
+      <dd>Year 3</dd>
+      <dt>Programme:</dt>
+      <dd>Bachelor of Science in Computer Science</dd>
+    </dl>
+
+    <p style="margin-top: 1.8rem; font-size: 0.9rem; opacity: 0.8; text-align: right;">
+      ⚡ always building.
+    </p>
+  </aside>
+</div>
+
+
+<footer>
+  Mapesho · Copperbelt University · CS '26
+</footer>
+
+</body>
+</html>
